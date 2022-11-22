@@ -1,5 +1,14 @@
 #include "systemclass.h"
 
+/// <summary>
+/// I'm currently on https://www.rastertek.com/dx11s3tut02.html
+/// </summary>
+/// <param name="hInstance"></param>
+/// <param name="hPrevInstance"></param>
+/// <param name="pScmdline"></param>
+/// <param name="iCmdshow"></param>
+/// <returns></returns>
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pScmdline, int iCmdshow)
 {
 	SystemClass* System;
