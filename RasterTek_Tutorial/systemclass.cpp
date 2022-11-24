@@ -177,6 +177,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	m_applicationName = L"Engine"; // its a wchar_t (wide character array)
 	
 	// setup the windows class with default settings
+	// MAKE SURE ALL OF THESE VARIABLES ARE INITIALIZED OR ELSE THE F*CKING WINDOW WONT SHOW UP
 	windowClass.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
 	windowClass.lpfnWndProc = WindowProc; // callback function
 	windowClass.cbClsExtra = 0;
@@ -184,6 +185,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	windowClass.hInstance = m_hInstance;
 	windowClass.hIcon = LoadIcon(NULL, IDI_WINLOGO);
 	windowClass.hIconSm = windowClass.hIcon;
+	windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
 	windowClass.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	windowClass.lpszMenuName = NULL;
 	windowClass.lpszClassName = m_applicationName;

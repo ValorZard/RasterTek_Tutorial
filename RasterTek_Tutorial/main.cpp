@@ -20,7 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pScmdline,
 	// initialize and run system object
 	result = System->Initialize();
 
-	if (result == true)
+	if (result) // if result is valid
 	{
 		System->Run();
 	}
