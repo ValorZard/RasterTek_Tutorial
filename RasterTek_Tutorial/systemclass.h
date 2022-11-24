@@ -9,7 +9,7 @@
 ///////////////
 // includes //
 /////////////
-#include <Windows.h>
+#include <windows.h>
 
 /////////////////////////
 // our class includes //
@@ -50,7 +50,7 @@ private:
 //////////////////////////
 // Function Prototypes //
 ////////////////////////
-static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM); // used to redirect windows system into MessageHandler()
+static LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM); // used to redirect windows system into MessageHandler()
 
 //////////////
 // Globals //

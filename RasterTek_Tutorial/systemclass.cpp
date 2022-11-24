@@ -39,8 +39,12 @@ bool SystemClass::Initialize()
 	m_Graphics = new GraphicsClass;
 
 	result = m_Graphics->Initialize(screenWidth, screenHeight, m_hwnd);
+	if (!result)
+	{
+		return false;
+	}
 
-	return result;
+	return true;
 }
 
 
@@ -103,6 +107,8 @@ void SystemClass::Run()
 			}
 		}
 	}
+
+	return;
 }
 
 bool SystemClass::Frame()
@@ -172,7 +178,7 @@ void SystemClass::InitializeWindows(int& screenWidth, int& screenHeight)
 	
 	// setup the windows class with default settings
 	windowClass.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
-	windowClass.lpfnWndProc = WndProc; // callback function
+	windowClass.lpfnWndProc = WindowProc; // callback function
 	windowClass.cbClsExtra = 0;
 	windowClass.cbWndExtra = 0;
 	windowClass.hInstance = m_hInstance;
@@ -260,7 +266,7 @@ void SystemClass::ShutdownWindows()
 }
 
 // this is where windows send its messages to
-LRESULT CALLBACK WndProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
+LRESULT CALLBACK WindowProc(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam)
 {
 	switch (umessage)
 	{
